@@ -1,5 +1,5 @@
 /*
-According to TC39, the ***async...await** spec is finished and expected to be published this year. This gives us a much more concise syntax and allows us to get away from 
+According to TC39, the ***async...await** spec is finished and expected to be published this year. This gives us a much more concise syntax and allows us to get away from
 so much of the chaining inherent in traditional Promise based code. Below is an example of how to combine the power of the Fetch API, Promises, async...await, and a bit of destructuring.
 
 Here are a few cool things you'll notice:
@@ -18,14 +18,14 @@ const postUrl = 'https://dev-rest-api.herokuapp.com/posts'
 
 async function get (url) {
   const res = await fetch(url)
-  return await res.json()
+  return res.json()
 }
 
 async function getTodosUsers () {
   const [todos, users] = await Promise.all([
     get(todoUrl),
-    get(postUrl)
-  ])
+    get(postUrl)]
+  )
   return {
     todos,
     users
@@ -36,7 +36,6 @@ async function getTodosUsers () {
   const usersTodos = await getTodosUsers()
   console.log(JSON.stringify(usersTodos, null, 2))
 })()
-
 
 // https://github.com/tc39/proposals/blob/master/finished-proposals.md
 

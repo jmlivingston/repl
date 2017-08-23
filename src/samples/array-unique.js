@@ -4,7 +4,6 @@ The first example can be used for primitive data types and the second example ca
 Both employ the use of the JavaScript primitive **Set** data type which does not allow duplicates along with the **Spread** operator.
 */
 
-
 const uniqueValuesFromArray = array => [...new Set(array)]
 
 const valueArray = [1, 2, 3, 3, 4, 4, 4, 5]
@@ -21,8 +20,8 @@ console.log(JSON.stringify(uniqueValueArray, null, 2))
 ]
 */
 
-
-const uniqueObjectsFromArray = array => [... new Set(array.map(JSON.stringify))].map(JSON.parse)
+const uniqueObjectsFromArray = array =>
+  [...new Set(array.map(JSON.stringify))].map(JSON.parse)
 
 const objectArray = [{ id: 1 }, { id: 1 }, { id: 2 }, { id: 3 }]
 const uniqueObjectArray = uniqueObjectsFromArray(objectArray)
@@ -41,5 +40,3 @@ console.log(JSON.stringify(uniqueObjectArray, null, 2))
   }
 ]
 */
-
-
