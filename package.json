@@ -4,18 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server"
+    "start": "node ./build.js && webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0",
-    "standard": "^10.0.3"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "standard": "^10.0.3",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   },
   "standard": {
     "globals": [
+      "async",
       "await",
-      "fetch"
+      "fetch",
+      "import"
     ]
   }
 }

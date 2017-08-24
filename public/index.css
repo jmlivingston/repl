@@ -1,0 +1,21 @@
+a,
+button {
+  cursor: pointer;
+}
+
+* {
+  border-radius: 1px !important;
+}
+
+hr {
+  border-top-color: #ccc;
+}
+
+code {
+  white-space: pre
+}
+
+#code-container {
+  max-height: 510px;
+  overflow-y: scroll;
+}
