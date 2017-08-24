@@ -16,6 +16,8 @@ npm install
 npm start
 ```
 
+Open http://localhost:8080
+
 This does two things:
 
 1 Builds a simple array saved in **codeFiles.js** based on the samples directory. This is consumed by **codeViewer.js** to build a simple UI.
