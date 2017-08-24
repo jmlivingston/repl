@@ -1,6 +1,6 @@
 # JavaScript Code REPL
 
-A minimalist Webpack 3.x and Babel 6.x project for playing around with JavaScript features. The only other libraries are Bootstrap for styling and <a target="_blank" title="standard" href="https://github.com/standard/standard">standard</a> for linting. Both can be easily removed.
+A minimalist Webpack 3.x and Babel 6.x project without all the clutter for playing around with JavaScript features. The only other libraries are Bootstrap for styling and <a target="_blank" title="standard" href="https://github.com/standard/standard">standard</a> for linting. Both can be easily removed.
 
 ---
 
