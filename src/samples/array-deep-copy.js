@@ -28,7 +28,7 @@ export const run = () => {
 
   /*
   Hack: The easiest way to create a copy of any object without mutating it, is without any fancy library and only a simple one-liner. ;)
-  It's easy to forget some of the forbidden fruit in JavaScript and it becomse immediately obvious once you see it.
+  It's easy to forget some of the forbidden fruit in JavaScript and it becomes immediately obvious once you see it.
   While tempting, you should **NEVER EVER** use this code as it can potentially kill performance.  When writing pure function, always use more surgical approaches like destructuring or Object.assign.
   */
 

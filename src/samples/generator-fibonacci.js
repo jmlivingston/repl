@@ -42,7 +42,7 @@ export const run = () => {
     "value": 2,
     "done": false
   }
-  ...
+  // more stuff here...
   {
     "done": true
   }
@@ -53,11 +53,6 @@ export const run = () => {
 
   /*
   0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-  */
-
-  /*
-  > **Fun Fact:** You can create an iterator from an array using Symbol.iterator or the newer Array.values. (Note: As of today, Array.values() is only
-  available in Firefox Nightly and Safari, so you will need Babel to transpile for you.)
   */
 
   const array = [1, 2, 3, 4]
@@ -74,13 +69,15 @@ export const run = () => {
   }
 
   /*
-  JavaScript Generators allow you to create iterators using an easier syntax than with Symbol.iterator.
+  JavaScript Generators allow you to create iterators using an easier syntax than with Symbol.iterator. Here is an minimal example based on the classic Fibonacci sequence. 
   
-  How To Consume and Iterator
+  To consume a generator, or any iterator for that matter, you can use one of the following three methods:
   
-  - for...of
-  - using **next**
-  - Spread operator
+  - for...of - Loops through values
+  - using **next** - Returns an object with a **value** and **done** property. One you get to the last value, **done** will be true and **value** will be omitted.
+  - Spread operator - Spreads the values which you can collect into an Array.
   
+  > **Fun Fact:** You can create an iterator from an array using Symbol.iterator or the newer Array.values. (Note: As of today, Array.values() is only
+  available in Firefox Nightly and Safari, so you will need Babel to transpile or a polyfill like shown above.)
   */
 }

@@ -7,6 +7,7 @@ const inActiveClass = 'btn-secondary'
 const clickButton = async button => {
   console.clear()
   document.getElementById('code-results').innerText = ''
+  document.getElementById('code-title').innerText = 'samples\\' + button.innerText
   const { run } = await import(`../samples/${button.innerText}`)
   run()
   const response = await fetch(`/samples/${button.innerText}`)

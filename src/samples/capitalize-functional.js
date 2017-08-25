@@ -46,5 +46,9 @@ export const run = () => {
   - Style - The non-functional example is more imperative and involves explicitly telling the computer what to do.
   The functional example is declarative, and tells the computer what the results should look like.
   Remember that under all the interesting and terse syntax you'll see in most functional examples is really the mindset which is really the core of functional programming.
+
+  This Is Sentence About Nothing
+
+  This Is A Another Sentence About Nothing  
   */
 }
