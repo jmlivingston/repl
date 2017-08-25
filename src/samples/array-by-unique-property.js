@@ -1,4 +1,5 @@
 export const run = () => {
+  // Code
   const filterByUniqueProperty = (array, prop, sortProp, isGreater) => {
     let trackObj = {}
     return array
@@ -15,6 +16,7 @@ export const run = () => {
       })
   }
 
+  // Consuming the Code
   const people = [
     {
       id: 1,
@@ -62,22 +64,5 @@ export const run = () => {
 
   console.log(filteredPeople)
 
-  /*
-  [
-    {
-      "id": 1,
-      "name": "Abe",
-      "lastUpdated": 1
-    },
-    {
-      "id": 2,
-      "name": "Cole",
-      "lastUpdated": 1
-    }
-  ]
-  */
-
-  /*
-  Filter out duplicates in an Array using given a property, sorting property, and sorting direction
-  */
+  // Blog Post: https://www.johnlivingston.io/blog/array-by-unique-property
 }

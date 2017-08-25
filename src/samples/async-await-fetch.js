@@ -1,7 +1,5 @@
 export const run = () => {
-  const todoUrl = 'https://dev-rest-api.herokuapp.com/to-dos?_page=2&_limit=2'
-  const badUrl = 'badUrl'
-
+  // Code
   function handleError (error) {
     // Do logging...
     if (error.status === 404) {
@@ -22,7 +20,6 @@ export const run = () => {
       })
       .then(json => json)
       .catch(error => {
-        // do something here
         return error
       })
   }
@@ -37,10 +34,13 @@ export const run = () => {
         handleError(res)
       }
     } catch (error) {
-      // do something here
       return error
     }
   }
+
+  // Consuming the Code
+  const todoUrl = 'https://dev-rest-api.herokuapp.com/to-dos?_page=2&_limit=2'
+  const badUrl = 'badUrl'
 
   function printResults (results) {
     if (results instanceof Error) {
@@ -50,75 +50,19 @@ export const run = () => {
     }
   }
 
-  getFetch(todoUrl).then(getFetchResults => {
-    printResults(getFetchResults)
-  });
+  getFetch(todoUrl).then(printResults);
 
   (async () => {
     const getAsyncFetchResults = await getAsyncFetch(todoUrl)
     printResults(getAsyncFetchResults)
   })()
 
-  getFetch(badUrl).then(getFetchResults => {
-    printResults(getFetchResults)
-  });
+  getFetch(badUrl).then(printResults);
 
   (async () => {
     const getAsyncFetchResults = await getAsyncFetch(badUrl)
     printResults(getAsyncFetchResults)
   })()
 
-  /*
-  You can use Fetch with or without **async...await**. The big difference is chaining **then** methods vs. using the **await** reserved word. Stylistically, I prefer less nesting and find the **async...await** method much easier to read.
-  
-  The following code samples illustrate how you can use both of these patterns, along with some simple error handling techniques.
-
-
-  This page could not be found: http://localhost:8080/badUrl
-
-  This page could not be found: http://localhost:8080/badUrl
-
-  [
-    {
-      "id": 3,
-      "name": "Sleep",
-      "completed": false,
-      "createdById": 1,
-      "createdDate": "2016-01-01",
-      "modifiedById": 1,
-      "modifiedDate": "2016-01-01"
-    },
-    {
-      "id": 4,
-      "name": "Feed the cat",
-      "completed": true,
-      "createdById": 3,
-      "createdDate": "2016-01-01",
-      "modifiedById": 3,
-      "modifiedDate": "2016-01-01"
-    }
-  ]
-
-  [
-    {
-      "id": 3,
-      "name": "Sleep",
-      "completed": false,
-      "createdById": 1,
-      "createdDate": "2016-01-01",
-      "modifiedById": 1,
-      "modifiedDate": "2016-01-01"
-    },
-    {
-      "id": 4,
-      "name": "Feed the cat",
-      "completed": true,
-      "createdById": 3,
-      "createdDate": "2016-01-01",
-      "modifiedById": 3,
-      "modifiedDate": "2016-01-01"
-    }
-  ]
-
-  */
+  // Blog Post: https://www.johnlivingston.io/blog/async-await-fetch
 }

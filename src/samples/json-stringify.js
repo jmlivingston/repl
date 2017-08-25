@@ -1,4 +1,5 @@
 export const run = () => {
+  // An Object and an Array to Be Stringified
   const person = {
     id: 1,
     name: 'Bob',
@@ -18,6 +19,13 @@ export const run = () => {
     'brocolli'
   ]
 
+  // Just Make It Look Pretty.
+  console.log(JSON.stringify(person, null, 2))
+  console.log(JSON.stringify(vegetables, null, 2))
+
+  // Replace Cats and Brocolli. Also change dog's name to Happy!
+
+  // Our Replacer Method
   const replaceCatsAndBroccoli = (key, value) => {
     if (Array.isArray(value)) {
       return value.filter(v => v !== 'brocolli')
@@ -36,56 +44,9 @@ export const run = () => {
     return value
   }
 
-  // Just Make It Look Pretty.
-  console.log(JSON.stringify(person, null, 2))
-  console.log(JSON.stringify(vegetables, null, 2))
-
-  // Replace Cats and Brocolli. Also change dog's name to Happy!
+  // Consuming with JSON.stringify
   console.log(JSON.stringify(person, replaceCatsAndBroccoli, 2))
   console.log(JSON.stringify(vegetables, replaceCatsAndBroccoli, 2))
+
+  // Blog Post: https://www.johnlivingston.io/blog/json-stringify
 }
-
-/*
-Just a few fun extra hints on how to use JSON.stringify. First of all, if you ever need to display your code wether in a **<code>** tag or in the console, and you want it to look pretty, simply pass two additional arguments.
-The first one is a replacer method and the second is the number of spaces you'd like for white space. The second thing you can do is use the replacer method for filtering out data. You can even use this with nested data.
-
-{
-  "id": 1,
-  "name": "Bob",
-  "pets": [
-    {
-      "type": "cat",
-      "name": "El Diablo"
-    },
-    {
-      "type": "dog",
-      "name": "Frowny"
-    }
-  ]
-}
-
-[
-  "carrots",
-  "onions",
-  "lettuce",
-  "brocolli"
-]
-
-{
-  "id": 1,
-  "name": "Bob",
-  "pets": [
-    {
-      "type": "dog",
-      "name": "Happy"
-    }
-  ]
-}
-
-[
-  "carrots",
-  "onions",
-  "lettuce"
-]
-
-*/
